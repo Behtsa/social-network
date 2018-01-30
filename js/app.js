@@ -19,8 +19,9 @@ $("#auth").click(function(){
 })
 
 function authGoogle() {
+	alert("Hola")
 	var provider = new firebbase.auth.GoogleAuthProvider();
-	authentication(provider)
+	authentication(provider);
 }
 
 function authentication(provider) {
