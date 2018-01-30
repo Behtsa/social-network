@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 body {
   margin: 0;
   padding: 0;
@@ -88,3 +89,150 @@ hr {
 .like-color {
 	color: red;
 }
+=======
+*{
+	margin: 0px;
+}
+
+body, html{
+	margin: 0px;
+	padding:0px;
+	background-color: #ffe;
+	font-family: 'Lato', 'Roboto', sans-serif;
+	font-size: 12px;
+}
+
+header{
+	background-color: #3e3e3e;
+	color:#fff;
+	margin: 0px;
+	padding: 0px;
+}
+
+img{
+	margin: 8px 4px;
+	text-align: center;
+}
+
+footer{
+	margin-bottom: 0;
+	background:#ededed;
+	font-size: 20px;
+}
+
+main{
+	height: 100vh;
+	margin: 0px;
+	padding: 0px;
+}
+.center-logo{
+	margin-top: 120px;}
+
+.txt-logo{
+	color: #fff;
+	font-size: 20px;
+	margin-left: 5px;}
+
+.log-user{
+	margin-top: 2em;
+}
+
+div, img, p{
+	font-size: 20px;
+}
+
+#userBackImage{
+
+}
+
+.img-responsive{
+	background-color: blue;
+	}
+
+/*User-Profile*/
+.profile-card {
+	background-color: #222222;}
+
+ .profile-pic {
+  	border-radius: 50%;
+  	position: absolute;
+  	top: 6em;
+  	left: 0;
+  	right: 0;
+  	margin: auto;
+  	z-index: 1;
+  	max-width: 100px;}
+
+.hvr-underline-from-center {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+  overflow: hidden;}
+
+
+ }
+
+#splash {
+	background-color: #9CCAEC;
+	color: white;
+	height: 100vh;
+}
+
+.user {
+	border: 1px solid black;
+	border-radius: 50px;
+	height: 10vh;
+}
+
+.logo {
+	margin-left: 40%;
+	margin-top: 40vh;
+}
+
+.height {
+	height: 10vh;
+}
+
+input[type='file'] {
+	opacity: 0;
+	color: transparent;    
+}
+
+hr {
+	height: 1px;
+	color: #9CCAEC;
+	background-color: #9CCAEC;
+	margin: 2%;
+}
+
+.mt-5 {
+	margin-top: 5%;
+}
+
+.mt-8 {
+	margin-top: 8% !important;
+}
+
+.ml-5 {
+	margin-left: 5;
+}
+
+.glyphicon.glyphicon-picture {
+    font-size: 28px;
+}
+
+#post {
+	background-color: #FBE5F1; 
+	border: 1px solid #E52F8D;
+	border-radius: 5px;
+	margin-top: 1%;
+	padding-top: 1%;
+}
+
+>>>>>>> 6f232d57be77351725eed833a27bb57e0f8d47c9
