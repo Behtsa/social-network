@@ -1,11 +1,13 @@
 body {
-
+  margin: 0;
+  padding: 0;
 }
 
 #splash {
 	background-color: #9CCAEC;
 	color: white;
 	height: 100vh;
+  width: 100%;
 }
 
 .user {
@@ -57,4 +59,32 @@ hr {
 	border-radius: 5px;
 	margin-top: 1%;
 	padding-top: 1%;
+}
+
+/*made navigation static
+.fast-menu{
+	position: fixed;
+	top: 0;
+	right: 0;
+	left: 0;
+	z-index: 1000;
+	background-color: white;
+}*/
+
+.post-style {
+  border-top: 5px solid #ccced1;
+  padding-right: 10px;
+}
+
+#file {
+  width: 50px;
+}
+
+.button-bar {
+  border: none;
+  background-color: transparent;
+}
+
+.like-color {
+	color: red;
 }
