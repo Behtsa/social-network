@@ -1,10 +1,3 @@
-Pet-App
-
-Objetivo:
-Crear una aplicación para conectar centros de adopción certificados para mascotas rescatadas con adoptantes y donadores.
-
-Misión:
-=======
 # Pet-App
 
 - Objetivo:
