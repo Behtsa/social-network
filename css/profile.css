@@ -1,5 +1,5 @@
 *{
-	background: red;
+	background: ;
 	margin: 0px;
 }
 
@@ -30,7 +30,6 @@ footer{
 }
 
 main{
-	height: 100vh;
 	margin: 0px;
 	padding: 0px;
 }
@@ -48,10 +47,6 @@ main{
 
 div, img, p{
 	font-size: 20px;
-}
-
-#userBackImage{
-
 }
 
 .img-responsive{
@@ -82,10 +77,19 @@ div, img, p{
   backface-visibility: hidden;
   -moz-osx-font-smoothing: grayscale;
   position: relative;
-  overflow: hidden;}
-
-
+  overflow: hidden;
  }
+
+/* navFixed-MenuFijo*/
+ .btm-fix{
+ 	background-color: #fff;
+}
+
+.fix{
+	margin-left: 24px;
+}
+
+
 
 #splash {
 	background-color: #9CCAEC;
@@ -134,6 +138,7 @@ hr {
 
 .glyphicon.glyphicon-picture {
     font-size: 28px;
+    padding: 0px;
 }
 
 #post {
@@ -143,3 +148,4 @@ hr {
 	margin-top: 1%;
 	padding-top: 1%;
 }
+
