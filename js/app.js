@@ -1,4 +1,3 @@
-<script>
     // Initialize Firebase
     var config = {
       apiKey: "AIzaSyC1LUXhOucBhR6TesAqAUHbFUFZIWloJ2U",
@@ -19,8 +18,7 @@ $("#auth").click(function(){
 })
 
 function authGoogle() {
-	alert("Hola")
-	var provider = new firebbase.auth.GoogleAuthProvider();
+	var provider = new firebase.auth.GoogleAuthProvider();
 	authentication(provider);
 }
 
