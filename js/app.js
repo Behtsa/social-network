@@ -12,25 +12,8 @@
 function loadPage() {
 	$("#share").click(showPost)
 	/*Para agregar imagen*/
-	$("#file").change(function(e) {
-		var file = e.target.files[0]
-		console.log(file)
-		var storageRef = firebase.storage().ref('photos/' + file.name)
-		var task = storageRef.put(file)
-		task.on('state_changed', 
-			function progress(snapshot) {
-				var percentage = (snapshot.bytesTransferred / snapshot.totalBytes) * 100
-				uploader.value = percentage
-			},
-				function error(err) {
-
-				},
-				function complete() {
-
-				}
-			)
-	})
-	/**/
+	$("#file").change(showImg)
+	/***/
 	$("#auth").click(function(){
 	authGoogle()
 })
@@ -44,32 +27,31 @@ function authGoogle() {
 
 function authentication(provider) {
 	firebase.auth().signInWithPopup(provider).then(function(result) {
-  // This gives you a Google Access Token. You can use it to access the Google API.
-  var token = result.credential.accessToken;
-  // The signed-in user info.
-  var user = result.user;
+  	// This gives you a Google Access Token. You can use it to access the Google API.
+  	var token = result.credential.accessToken;
+  	// The signed-in user info.
+  	var user = result.user.additionalUserInfo;
 	console.log(result)
-  // ...
+  	// ...
 }).catch(function(error) {
 	console.log(error)
-  // Handle Errors here.
-  var errorCode = error.code;
-console.log(errorCode)
-  var errorMessage = error.message;
-console.log(errorMessage)
-  // The email of the user's account used.
-  var email = error.email;
-console.log(email)
-  // The firebase.auth.AuthCredential type that was used.
-  var credential = error.credential;
-console.log(credential)
-  // ...
+  	// Handle Errors here.
+  	var errorCode = error.code;
+	console.log(errorCode)
+  	var errorMessage = error.message;
+	console.log(errorMessage)
+  	// The email of the user's account used.
+  	var email = error.email;
+	console.log(email)
+  	// The firebase.auth.AuthCredential type that was used.
+  	var credential = error.credential;
+	console.log(credential)
+  	// ...
 });
 }
 
 function showPost(e) {
 	e.preventDefault()
-
 	var $container = $("#posts_container")
 	var $divPost =  $("<div />", {'class': "col-xs-12 post-style"})
 	var $user =  users[0]['nickname']
@@ -94,7 +76,6 @@ function showPost(e) {
 	var $shareIcon = $("<i />", {'class': "fa fa-paper-plane"})
 	$shareButton.html($shareIcon)
 
-
 	$divPost.append($pUser)
 	$divPost.append($pHour)
 	$divPost.append(post)
@@ -115,6 +96,25 @@ function like(pawIcon) {
 	pawIcon.removeClass("fa fa-heart-o")
 	pawIcon.addClass("fa fa-heart")
 	pawIcon.addClass("like-color")
+}
+
+
+
+function showImg(event) {
+  		var $file = event.target.files[0];
+  		var reader = new FileReader();
+  		reader.onload = function (event){
+    	// crear elemento imagen, darle clase y attr
+    	// var $image = $("<section />");
+    	var $newImg = $("<img />", {"class":"img-responsive container-image  col-xs-offset-1 col-xs-10 mt-5"});
+    	$newImg.attr("src", event.target.result);
+    	var $container = $("#posts_container")
+		var $divPost =  $("<div />", {'class': "col-xs-12 post-style"})
+		$divPost.append($newImg)
+		$container.prepend($divPost)
+    	
+  }
+  reader.readAsDataURL(this.files[0]);
 }
 
 

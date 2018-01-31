@@ -113,5 +113,10 @@ hr {
 	-webkit-appearance: none;
 	appearance: none;
 	width: 50%;
-	
+
+}
+
+.container-image {
+	border: 1px solid black;
+	height: 100px;
 }
