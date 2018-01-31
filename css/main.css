@@ -3,11 +3,27 @@ body {
   padding: 0;
 }
 
-#splash {
+.bg-color {
 	background-color: #9CCAEC;
+}
+
+#splash {
 	color: white;
 	height: 100vh;
-  width: 100%;
+  	width: 100%;
+  	display: flex;
+  	justify-content: center;
+  	align-items: center;
+}
+
+#logo {
+	color: white;
+	height: 10vh;
+  	display: flex;
+  	padding-top: 50%;
+  	justify-content: center;
+  	align-items: center;
+  	width: 100%;
 }
 
 .user {
@@ -16,10 +32,10 @@ body {
 	height: 10vh;
 }
 
-.logo {
-	margin-left: 40%;
-	margin-top: 40vh;
+.log-in {
+	height: 100vh;
 }
+
 
 .height {
 	height: 10vh;
@@ -39,6 +55,10 @@ hr {
 
 .mt-5 {
 	margin-top: 5%;
+}
+
+.mt-30 {
+	margin-top: 30%;
 }
 
 .mt-8 {

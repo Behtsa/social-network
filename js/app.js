@@ -11,11 +11,11 @@
 
 function loadPage() {
 	$("#share").click(showPost)
-}
-
-$("#auth").click(function(){
+	$("#auth").click(function(){
 	authGoogle()
 })
+}
+
 
 function authGoogle() {
 	var provider = new firebase.auth.GoogleAuthProvider();
