@@ -13,7 +13,9 @@ function loadPage() {
 	$("#share").click(showPost)
 	/*Para agregar imagen*/
 	$("#file").change(function(event){
-
+		var imagen = $("#imagen")
+		imagen[0].src = URL.createObjectURL(event.target.files[0])
+		console.log(imagen)
 	})
 	/***/
 	$("#auth").click(function(){
@@ -71,7 +73,8 @@ function showPost(e) {
 	var $divPost =  $("<div />", {'class': "col-xs-12 post-style"})
 	var $user =  users[0]['nickname']
 	var $pUser = $("<p />")
-	$pUser.text($user)
+	var $saveImg = $("<img>", {'id': "imagen"})
+	$saveImg.addClass('img-responsive')
 	var $date = new Date()
 	var $hour = $date.getHours()
 	var $minutes = $date.getMinutes()
@@ -93,6 +96,7 @@ function showPost(e) {
 
 	$divPost.append($pUser)
 	$divPost.append($pHour)
+	$divPost.append($saveImg)
 	$divPost.append(post)
 	$divBar.append($pawButton)
 	$divBar.append($commentButton)	
@@ -115,22 +119,22 @@ function like(pawIcon) {
 
 
 
-function showImg(event) {
-  		var $file = event.target.files[0];
-  		var reader = new FileReader();
-  		reader.onload = function (event){
-    	// crear elemento imagen, darle clase y attr
-    	// var $image = $("<section />");
-    	var $newImg = $("<img />", {"class":"img-responsive container-image  col-xs-offset-1 col-xs-10 mt-5"});
-    	$newImg.attr("src", event.target.result);
-    	var $container = $("#posts_container")
-		var $divPost =  $("<div />", {'class': "col-xs-12 post-style"})
-		$divPost.append($newImg)
-		$container.prepend($divPost)
+// function showImg(event) {
+//   		var $file = event.target.files[0];
+//   		var reader = new FileReader();
+//   		reader.onload = function (event){
+//     	// crear elemento imagen, darle clase y attr
+//     	// var $image = $("<section />");
+//     	var $newImg = $("<img />", {"class":"img-responsive container-image  col-xs-offset-1 col-xs-10 mt-5"});
+//     	$newImg.attr("src", event.target.result);
+//     	var $container = $("#posts_container")
+// 		var $divPost =  $("<div />", {'class': "col-xs-12 post-style"})
+// 		$divPost.append($newImg)
+// 		$container.prepend($divPost)
     	
-  }
-  reader.readAsDataURL(this.files[0]);
-}
+//   }
+//   reader.readAsDataURL(this.files[0]);
+// }
 
 
 $(document).ready(loadPage)
