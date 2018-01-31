@@ -108,3 +108,10 @@ hr {
 .like-color {
 	color: red;
 }
+
+#uploader {
+	-webkit-appearance: none;
+	appearance: none;
+	width: 50%;
+	
+}

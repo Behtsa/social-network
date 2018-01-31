@@ -4,13 +4,33 @@
       authDomain: "pet-app-c88fb.firebaseapp.com",
       databaseURL: "https://pet-app-c88fb.firebaseio.com",
       projectId: "pet-app-c88fb",
-      storageBucket: "",
+      storageBucket: "pet-app-c88fb.appspot.com",
       messagingSenderId: "902252465338"
     };
     firebase.initializeApp(config);
 
 function loadPage() {
 	$("#share").click(showPost)
+	/*Para agregar imagen*/
+	$("#file").change(function(e) {
+		var file = e.target.files[0]
+		console.log(file)
+		var storageRef = firebase.storage().ref('photos/' + file.name)
+		var task = storageRef.put(file)
+		task.on('state_changed', 
+			function progress(snapshot) {
+				var percentage = (snapshot.bytesTransferred / snapshot.totalBytes) * 100
+				uploader.value = percentage
+			},
+				function error(err) {
+
+				},
+				function complete() {
+
+				}
+			)
+	})
+	/**/
 	$("#auth").click(function(){
 	authGoogle()
 })
@@ -49,6 +69,7 @@ console.log(credential)
 
 function showPost(e) {
 	e.preventDefault()
+
 	var $container = $("#posts_container")
 	var $divPost =  $("<div />", {'class': "col-xs-12 post-style"})
 	var $user =  users[0]['nickname']
@@ -72,6 +93,7 @@ function showPost(e) {
 	var $shareButton =  $("<button />",  {'class': "button-bar col-xs-2"})
 	var $shareIcon = $("<i />", {'class': "fa fa-paper-plane"})
 	$shareButton.html($shareIcon)
+
 
 	$divPost.append($pUser)
 	$divPost.append($pHour)
