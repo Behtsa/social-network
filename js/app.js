@@ -12,7 +12,9 @@
 function loadPage() {
 	$("#share").click(showPost)
 	/*Para agregar imagen*/
-	$("#file").change(showImg)
+	$("#file").change(function(event){
+
+	})
 	/***/
 	$("#auth").click(function(){
 	authGoogle()
@@ -30,8 +32,10 @@ function authentication(provider) {
   	// This gives you a Google Access Token. You can use it to access the Google API.
   	var token = result.credential.accessToken;
   	// The signed-in user info.
-  	var user = result.user.additionalUserInfo;
-	console.log(result)
+  	var user = result.user;
+	window.location.href="../views/newsfeed.html"
+	saveUserData(user);
+
   	// ...
 }).catch(function(error) {
 	console.log(error)
@@ -48,6 +52,16 @@ function authentication(provider) {
 	console.log(credential)
   	// ...
 });
+}
+
+function saveUserData(user) {
+		var usuario = {
+			uid: user.uid,
+			nombre: user.displayName,
+			email: user.email,
+			foto: user.photoURL
+		}
+		firebase.database().ref("user/" + user.uid).set(usuario)
 }
 
 function showPost(e) {
