@@ -33,12 +33,13 @@ function authentication(provider) {
   	var token = result.credential.accessToken;
   	// The signed-in user info.
   	var user = result.user;
-	window.location.href="../views/newsfeed.html";
-	saveUserData(user);
+	// window.location.href="../views/newsfeed.html";
+	// saveUserData(user);
 
   	// ...
 }).catch(function(error) {
 	console.log(error)
+	// window.location.href="../views/newsfeed.html";
   	// Handle Errors here.
   	var errorCode = error.code;
 	console.log(errorCode)
@@ -54,15 +55,15 @@ function authentication(provider) {
 });
 }
 
-function saveUserData(user) {
-		var usuario = {
-			uid: user.uid,
-			nombre: user.displayName,
-			email: user.email,
-			foto: user.photoURL
-		}
-		firebase.database().ref("user/" + user.uid).set(usuario)
-}
+// function saveUserData(user) {
+// 		var usuario = {
+// 			uid: user.uid,
+// 			nombre: user.displayName,
+// 			email: user.email,
+// 			foto: user.photoURL
+// 		}
+// 		firebase.database().ref("user/" + user.uid).set(usuario)
+// }
 
 function showPost(e) {
 	e.preventDefault()
